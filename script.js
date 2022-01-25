@@ -2,7 +2,8 @@ const api_url = "https://prashant1891.herokuapp.com/user";
 //const api_url = "http://localhost:8080/user"
 
 function loadData(records = []) {
-	var table_data = "";
+	console.log(records);
+	table_data = ``;
 	for(let i=0; i<records.length; i++) {
 		table_data += `<tr>`;
 		table_data += `<td>${records[i].name}</td>`;
@@ -15,8 +16,8 @@ function loadData(records = []) {
 		table_data += `</td>`;
 		table_data += `</tr>`;
 	}
-	console.log(table_data);
-	document.getElementById("tbody").innerHTML = table_data;
+	//console.log(table_data);
+	document.getElementById("table_data").innerHTML = table_data;
 }
 
 function getData() {
