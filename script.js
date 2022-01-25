@@ -29,22 +29,6 @@ function getData() {
 }
 
 
-function getDataById(id) {
-	fetch(`${api_url}/${id}`)
-	.then((response) => response.json())
-	.then((data) => {
-	
-		console.log(data._id);
-		console.log("hello");
-		console.log(data);
-		document.getElementById("id").value = data._id;
-		document.getElementById("name").value = data.name;
-		document.getElementById("age").value = data.age;
-		document.getElementById("city").value = data.city;
-	})
-}
-
-
 function postData() {
 	var name = document.getElementById("name").value;
 	var age = document.getElementById("age").value;
@@ -67,16 +51,29 @@ function postData() {
 	})
 }	
 
+function getDataById(id) {
+	fetch(`${api_url}/${id}`)
+	.then((response) => response.json())
+	.then((data) => {
+	
+		console.log(data);
+		console.log("hello");
+		console.log(data);
+		document.getElementById("id").value = data[0]._id;
+		document.getElementById("name").value = data[0].name;
+		document.getElementById("age").value = data[0].age;
+		document.getElementById("city").value = data[0].city;
+	})
+}
 
 function putData() {
 	
-	var _id = document.getElementById("id").value;
+	var id = document.getElementById("id").value;
 	var name = document.getElementById("name").value;
 	var age = document.getElementById("age").value;
 	var city = document.getElementById("city").value;
-	console.log(_id);
 	
-	data = {_id: _id, name: name, age: age, city: city};
+	data = {id: id, name: name, age: age, city: city};
 	
 	fetch(api_url, {
 		method: "PUT",
