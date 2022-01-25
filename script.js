@@ -1,4 +1,4 @@
-const api_url = "https://prashant1891.herokuapp.com/user"
+const api_url = "https://prashant1891.herokuapp.com/user";
 //const api_url = "http://localhost:8080/user"
 
 function loadData(records = []) {
