@@ -113,29 +113,3 @@ function deleteData(id) {
 		})
 	}
 }
-
-/*
-function loadData(records=[]){
-	console.log(records);
-	table_data=``;
-	for(i=0;i<records.length;i++){
-		//console.log(records[i]);
-		table_data +=`<tr>`;
-		table_data += `<td>${i+1}</td>`;
-		table_data += `<td>${records[i].name}</td>`;
-		table_data += `<td>${records[i].age}</td>`;
-		table_data += `<td>${records[i].city}</td>`;
-		table_data += `</tr>`;
-	document.getElementById('table_data').innerHTML = table_data;
-	}
-	
-}
-
-function getData(){
-	fetch('https://prashant1891.herokuapp.com/user')
-	.then((response) => response.json())
-	.then((data) => {
-		//console.log(data);
-		loadData(data);
-		})
-}
