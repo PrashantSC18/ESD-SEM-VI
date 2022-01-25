@@ -92,17 +92,17 @@ function putData() {
 }
 
 
-function deleteData(id) {
-	user_input = confirm("Are you sure you want to delete this record?");
+function deleteData(id,name) {
+	user_input = confirm("Are you sure you want to delete ${name} record?");
 	if(user_input)		{
-		console.log(id);
+		//console.log(id);
 		fetch(api_url, {
 			method: "DELETE",
 			headers: {
 			  'Accept': 'application/json',
 			  'Content-Type': 'application/json'
 			},
-			body: JSON.stringify({"_id": id})
+			body: JSON.stringify({"id": id})
 		})
 		.then((response) => response.json())
 		.then((data) => { 
