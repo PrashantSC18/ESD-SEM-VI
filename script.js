@@ -92,8 +92,8 @@ function putData() {
 }
 
 
-function deleteData(id,name) {
-	user_input = confirm("Are you sure you want to delete ${name} record?");
+function deleteData(id) {
+	user_input = confirm("Are you sure you want to delete this record?");
 	if(user_input)		{
 		//console.log(id);
 		fetch(api_url, {
